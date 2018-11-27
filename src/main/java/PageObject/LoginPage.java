@@ -19,14 +19,16 @@ public class LoginPage extends BasePage {
     @FindBy(how = How.CLASS_NAME, using = "arrow-to-right")
     public WebElement btnLogin;
 
-    public void setInputEmail() {
-        inputEmail.sendKeys(Constants.LOGIN);
+    public void setInputEmail(String log) {
+        inputEmail.sendKeys(log);
     }
 
-    public void setInputPassword() {
-        inputPassword.sendKeys(Constants.PASSWORD);
+    public void setInputPassword(String pas) {
+        inputPassword.sendKeys(pas);
     }
-
+/**
+ * this ....
+ */
     public void clickOnBtnLogin() {
         btnLogin.click();
         wait.until(ExpectedConditions.urlContains("dashboard"));

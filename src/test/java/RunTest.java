@@ -7,23 +7,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class RunTest {
-    WebDriver webDriver;
-    LoginPage loginPage;
+    private WebDriver webDriver;
+    private LoginCase loginCase;
+//    LoginPage loginPage;
+
 
     @Before
     public void setUp() {
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
-        webDriver.get(Constants.URL);
-        loginPage = new LoginPage(webDriver);
+        webDriver.get(Constants.URLDEV);
+        loginCase = new LoginCase(webDriver);
     }
 
     @Test
     public void test() {
-        loginPage.setInputEmail();
-        loginPage.setInputPassword();
-        loginPage.clickOnBtnLogin();
-    }
+        loginCase.testValidLogin();
+}
 
     @After
     public void tearDown(){
